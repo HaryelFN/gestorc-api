@@ -1,0 +1,11 @@
+CREATE TABLE pessoa (
+	id BIGINT(20) PRIMARY KEY AUTO_INCREMENT,
+	sexo VARCHAR(2) NOT NULL,
+	dt_nascimento DATE NOT NULL,
+	nome VARCHAR(255) NOT NULL,
+	cpf VARCHAR(11) UNIQUE,
+	telefone VARCHAR(50),
+	email VARCHAR(50),
+	id_endereco BIGINT(20),
+	FOREIGN KEY (id_endereco) REFERENCES endereco (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

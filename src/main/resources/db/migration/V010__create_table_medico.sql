@@ -1,0 +1,10 @@
+CREATE TABLE medico (
+	id BIGINT(20) PRIMARY KEY AUTO_INCREMENT,
+    ativo TINYINT(1) NOT NULL DEFAULT 0,
+    uf_crm VARCHAR(2) NOT NULL,
+	crm VARCHAR(50) NOT NULL UNIQUE,
+    id_pessoa BIGINT(20) NOT NULL,
+    dt_criacao DATETIME NOT NULL,
+    dt_atualizacao DATETIME,
+    FOREIGN KEY (id_pessoa) REFERENCES pessoa (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
